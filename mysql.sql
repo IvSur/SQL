@@ -14,7 +14,9 @@ SELECT * FROM cartridge WHERE date_cartridge >= adddate(NOW(), interval - 30 day
 #############################################
 #	Вывод значений за определенный день		#
 #############################################
-SELECT * FROM cartridge WHERE date_format(date_cartridge, '%Y-%m-%d') = '2015-03-24';
+SELECT * FROM cartridge WHERE date_format(date_cartridge, '%Y-%m-%d') = '2015-05-14';
+
+UPDATE `test`.`cartridge` SET `date_cartridge`='2015-05-06 10:00:00' WHERE `id_cartridge`>='1203';
 #####################################################
 #	Количество значений за определенный день		#
 #####################################################
@@ -37,7 +39,7 @@ SELECT date_format(date_cartridge, '%d %b') as Дата,
 #####################################################
 #	Вывод всех значений конкретного картриджа		#
 #####################################################
-SELECT * FROM cartridge WHERE number_cartridge = 1078;
+SELECT * FROM cartridge WHERE number_cartridge = 0;
 
 SELECT count(id_cartridge) AS Заправки FROM cartridge
 		WHERE (date_format(date_cartridge, '%Y-%m-%d') >= '2014-11-01'
@@ -73,3 +75,6 @@ CALL change_id();
 CALL test1();
 
 SELECT * FROM cartridge WHERE owner_cartridge = 'ИП Леонова';
+
+SELECT * FROM cartridge WHERE date_format(date_cartridge, '%Y-%m-%d') >= '2015-03-01'
+						and date_format(date_cartridge, '%Y-%m-%d') <= '2015-03-31';
