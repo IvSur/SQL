@@ -78,3 +78,19 @@ SELECT * FROM cartridge WHERE owner_cartridge = 'ИП Леонова';
 
 SELECT * FROM cartridge WHERE date_format(date_cartridge, '%Y-%m-%d') >= '2015-03-01'
 						and date_format(date_cartridge, '%Y-%m-%d') <= '2015-03-31';
+						
+SELECT * FROM cartridge WHERE date_format(date_cartridge, '%Y-%m-%d') >= '2015-03-01'
+						and date_format(date_cartridge, '%Y-%m-%d') <= '2015-03-31';
+						
+select distinct(number_cartridge) 
+	from cartridge 
+	where number_cartridge <= 100 
+    order by number_cartridge;
+    
+create temporary table temp
+	select distinct(number_cartridge) 
+	from cartridge 
+	where number_cartridge <= 100 
+    order by number_cartridge;
+    
+select @total := count(number_cartridge) as total from temp;
