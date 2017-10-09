@@ -6,7 +6,7 @@ SELECT * FROM cartridge WHERE owner_cartridge = 'Не известно'
 						and date_format(date_cartridge, '%Y-%m-%d') >= '2014-10-01'
 						and date_format(date_cartridge, '%Y-%m-%d') <= '2014-10-31';
 
-ALTER TABLE repairpc AUTO_INCREMENT=6;
+#ALTER TABLE repairpc AUTO_INCREMENT=6;
 #################################################################
 #	Вывод значений за определенный период от текущего момента	#
 #################################################################
@@ -16,7 +16,7 @@ SELECT * FROM cartridge WHERE date_cartridge >= adddate(NOW(), interval - 30 day
 #############################################
 SELECT * FROM cartridge WHERE date_format(date_cartridge, '%Y-%m-%d') = '2015-05-14';
 
-UPDATE `test`.`cartridge` SET `date_cartridge`='2015-05-06 10:00:00' WHERE `id_cartridge`>='1203';
+#UPDATE `test`.`cartridge` SET `date_cartridge`='2015-05-06 10:00:00' WHERE `id_cartridge`>='1203';
 #####################################################
 #	Количество значений за определенный день		#
 #####################################################
@@ -79,8 +79,11 @@ SELECT * FROM cartridge WHERE owner_cartridge = 'ИП Леонова';
 SELECT * FROM cartridge WHERE date_format(date_cartridge, '%Y-%m-%d') >= '2015-03-01'
 						and date_format(date_cartridge, '%Y-%m-%d') <= '2015-03-31';
 						
-SELECT * FROM cartridge WHERE date_format(date_cartridge, '%Y-%m-%d') >= '2015-03-01'
-						and date_format(date_cartridge, '%Y-%m-%d') <= '2015-03-31';
+SELECT * FROM cartridge WHERE date_format(date_cartridge, '%Y-%m-%d') BETWEEN '2017-06-09' AND '2017-06-10';
+
+
+						
+
 						
 select distinct(number_cartridge) 
 	from cartridge 
